@@ -19,3 +19,13 @@ if [[ $lastName =~ $regex1 ]]
  else
         echo "false"
 fi
+
+shopt -s extglob
+regex2="^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9])+\.)+([a-zA-Z])+$"
+read -p "Enter a valid Email :" Email
+if [[ $Email =~ $regex2 ]]
+then
+        echo "VALID"
+else
+        echo "INVALID EMAIL"
+fi
