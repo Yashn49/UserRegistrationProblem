@@ -39,3 +39,12 @@ then
 else
         echo "Number is invalid"
 fi
+
+shopt -s extglob
+read -p "Enter a password: " s
+if [[ "${#s}" -ge 8 && "$s" == *[A-Z]* && "$s" == *[a-z]* && "$s" == *[0-9]* && "$s" == *[!@*#$%^_-]* ]]
+then
+   echo "Password Accepted"
+else
+   echo "Password Rejected"
+fi
