@@ -29,3 +29,13 @@ then
 else
         echo "INVALID EMAIL"
 fi
+
+shopt -s extglob
+regex3="^([0-9]{2})+[]+([^0]{1}[0-9]{9})+$"
+read -p "Enter a valid number" Number
+if [[ $Number =~ $regex3 ]]
+then
+        echo "Number is Valid"
+else
+        echo "Number is invalid"
+fi
